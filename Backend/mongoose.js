@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/StudentsHelp';
+
+const url = "mongodb+srv://harshagrawal7878:harsh123@cluster0.azvcecl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 
 mongoose.connect(url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  dbName: "StudentsHelp"
 });
 
 const db = mongoose.connection;
@@ -17,17 +20,23 @@ db.once('open', async () => {
 
   try {
     const data = db.db.collection("PYQS");
-    const data2 = db.db.collection("Btech2ndYear");
+    // console.log("Collection Food_items accessed:");
+
     const result = await data.find({}).toArray();
+    // console.log("Food_items fetched:");
+
+    const data2 = db.collection("Btech2ndYear");
+    // console.log("Collection Food_category accessed:");
+
     const result2 = await data2.find({}).toArray();
-    if (result,result2) {
+    // console.log("Food_category fetched:");
+
+    if (result && result2) {
       global.data = result;
       global.data2 = result2;
-      // console.log(result2)
-        // console.log(result)
-      console.log('Data loaded:'); // Optional: for debugging
+      console.log('All data loaded');
     } else {
-      console.log('No Data found');
+      console.log('No data found');
     }
   } catch (err) {
     console.error('Error fetching data:', err);
