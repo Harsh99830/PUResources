@@ -10,7 +10,7 @@ export default function App() {
   const [page, setPages] = useState(1);
 
   const loadData = async () => {
-    let response = await fetch("http://localhost:5000/api/Data", {
+    let response = await fetch("https://pu-resources-backend.onrender.com/api/Data", {
       method: "POST",
       headers: {
         "content-type": "application/json"
