@@ -7,7 +7,7 @@ export default function Signup() {
     // let navigate = useNavigate()
     const handleSubmit = async (event)=>{
         event.preventDefault();
-        const response = await fetch("http://localhost:5000/api/createuser",{
+        const response = await fetch("https://pu-resources-backend.onrender.com/api/createuser",{
             method:'POST',
             headers:{
                 "Content-Type":"application/json"
