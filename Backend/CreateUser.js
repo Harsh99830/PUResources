@@ -1,10 +1,11 @@
 const express = require('express')
 const router  = express.Router()
 const user  = require("./user")
+require("dotenv").config();
 const { body, validationResult} = require('express-validator')
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
-const jwtSecret = "YouAreUsingHarsh'sWebsite"
+const jwtSecret = process.env.JWT_SECRET;
 
 router.post("/createuser",[
     body('email', 'Enter the valid Email Id').isEmail(),
