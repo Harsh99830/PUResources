@@ -46,10 +46,7 @@ export default function Signup() {
   <div className="form-group">
     <label htmlFor="exampleInputPassword1">Password</label>
     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" name='password' value={credentials.password} onChange={onChange}/>
-  </div>
-  <div className="form-group">
-    <label htmlFor="exampleInputPassword1">Location</label>
-    <input type="text" className="form-control" placeholder="Enter location" name='location' value={credentials.location} onChange={onChange}/>
+    <div>min 6 character</div>
   </div>
  
   <button type="submit" className="m-3 btn btn-success">Submit</button>
