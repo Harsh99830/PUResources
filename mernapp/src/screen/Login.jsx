@@ -16,7 +16,7 @@ export default function Login() {
           body: JSON.stringify({email:credentials.email,password: credentials.password})
       })
       const json = await response.json()
-      console.log(json)
+      // console.log(json)
 
       
       if(!json.success){
@@ -24,9 +24,9 @@ export default function Login() {
       }
       if(json.success){
         localStorage.setItem("authToken", json.authToken)
-        console.log(localStorage.getItem("authToken"))
+        // console.log(localStorage.getItem("authToken"))
         navigate("/")
-        alert("Login successful")
+         alert("Login successful")
         // NotificationManager.success("Login successful")
     }
   }
@@ -43,7 +43,7 @@ export default function Login() {
   <div className="form-group">
     <label htmlFor="exampleInputEmail1">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={credentials.email} placeholder="Enter email" onChange={onChange}/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else like facebook.</small>
+   
   </div>
   <div className="form-group">
     <label htmlFor="exampleInputPassword1">Password</label>

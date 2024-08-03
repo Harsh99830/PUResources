@@ -1,25 +1,33 @@
-import React from 'react'
-
+import React from 'react';
+import "../Card.css"
 export default function Card(props) {
   return (
-    <div>
-      <div className="card container" style={{marginTop:"50px",marginLeft:"350px",width:"800px"}}>
-  <div className="card-body">
-    <div className='container'>
-        <h3>{props.name}</h3>
-        <hr /> 
-       <h6 style={{textDecoration:"underline"}}>Previous question paper :-</h6>
-       <span className='fs-6 fw-bold' style={{float:"left"}}>CIE-1 </span><a className='card bg-primary text-white' style={{marginLeft:"100px",display:"flex", textAlign:"center",textDecoration:"none",width:"500px"}} href={props.cie}>Click here</a><br />
-       <span className='fs-6 fw-bold' style={{float:"left"}}>Mid sem </span><a className='card bg-primary text-white' style={{marginLeft:"100px",display:"flex", textAlign:"center",textDecoration:"none",width:"500px"}} href={props.mid}>Click here</a><br />
-        <span className='fs-6 fw-bold' style={{float:"left"}}>End sem </span><a className='card bg-primary text-white' style={{marginLeft:"100px",display:"flex", textAlign:"center",textDecoration:"none",width:"500px"}} href={props.end}>Click here</a>
-    <hr /> 
-    <h6 style={{textDecoration:"underline"}}>Notes :-</h6>
-     <span className='fs-6 fw-bold' style={{float:"left"}}>Notes</span><a className='card bg-danger text-white' style={{marginLeft:"100px",display:"flex", textAlign:"center",textDecoration:"none",width:"500px"}} href={props.notes}>Click here</a><br />
-
-
+    <div className="card-container">
+      <div className="card">
+        <div className="card-body">
+          <h4 style={{textAlign:"center"}}>{props.name}</h4>
+          <hr />
+          <h6>Previous question paper:</h6>
+          <div className="links">
+            <span className="fw-bold">CIE-1</span>
+            <a className="card-link bg-primary text-white" href={props.cie}>Click here</a>
+          </div>
+          <div className="links">
+            <span className="fw-bold">Mid sem</span>
+            <a className="card-link bg-primary text-white" href={props.mid}>Click here</a>
+          </div>
+          <div className="links">
+            <span className="fw-bold">End sem</span>
+            <a className="card-link bg-primary text-white" href={props.end}>Click here</a>
+          </div>
+          <hr />
+          <h6>Notes:</h6>
+          <div className="links">
+            <span className="fw-bold">Notes</span>
+            <a className="card-link bg-danger text-white" href={props.notes}>Click here</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    </div>
-  )
+  );
 }

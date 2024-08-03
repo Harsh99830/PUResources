@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
-import { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import './App.css'; // Import the CSS file for additional styles
 
 export default function App() {
   const [search, setSearch] = useState('');
@@ -17,7 +17,6 @@ export default function App() {
       }
     });
     response = await response.json();
-    // console.log(response)
     setData(response[0]);
   };
 
@@ -25,8 +24,7 @@ export default function App() {
     loadData();
   }, []);
 
-
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   
   useEffect(() => {
     if (!localStorage.getItem("authToken")) {
@@ -37,7 +35,7 @@ export default function App() {
   const selectPageHandler = (selectedPage) => {
     if (
       selectedPage >= 1 &&
-      selectedPage <= Math.ceil(filteredData.length / 4) &&
+      selectedPage <= Math.ceil(filteredData.length / 3) &&
       selectedPage !== page
     ) {
       setPages(selectedPage);
@@ -51,49 +49,48 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <div>
-
-        <form className="d-flex container" style={{ marginTop: "50px", width: "1100px" }}>
-        <input
-          className="form-control me-2"
-          type="search"
-          placeholder="Search Subject"
-          aria-label="Search"
-          value={search}
-          onChange={(e) => { setSearch(e.target.value); setPages(1); }}
-        />
-      </form>
-      {filteredData.length !== 0
-        ? filteredData.slice((page - 1) * 4, page * 4).map((data) => {
-          return (
-            <div key={data._id} className='col-12 col-md-6 col-lg-3'>
-              <Card name={data.name} cie={data.CIE1} mid={data.MID} end={data.END} notes={data.notes} />
-            </div>
-          );
-        })
-        : <div>No data found</div>
-      }
-
-      {filteredData.length > 0 && (
-        <div className='pagination' style={{ padding: "10px", margin: "15px 0", display: "flex", justifyContent: "center" }}>
-          <span onClick={() => selectPageHandler(page - 1)} style={{ padding: "15px 20px", border: "1px solid", cursor: "pointer" }}>PREV</span>
-          {
-            [...Array(Math.ceil(filteredData.length / 4))].map((_, i) => {
+      <div className="container">
+        <form className="d-flex mt-3 mb-3">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search Subject"
+            aria-label="Search"
+            value={search}
+            onChange={(e) => { setSearch(e.target.value); setPages(1); }}
+          />
+        </form>
+        <div className="row">
+          {filteredData.length !== 0
+            ? filteredData.slice((page - 1) * 3, page * 3).map((data) => {
               return (
-                <span
-                  className={page === i + 1 ? "bg-success" : ""}
-                  onClick={() => selectPageHandler(i + 1)}
-                  style={{ padding: "15px 20px", border: "1px solid", cursor: "pointer" }}
-                  key={i}
-                >
-                  {i + 1}
-                </span>
+                <div key={data._id} className="col-12 col-md-6 col-lg-4 mb-3">
+                  <Card name={data.name} cie={data.CIE1} mid={data.MID} end={data.END} notes={data.notes} />
+                </div>
               );
             })
+            : <div>No data found</div>
           }
-          <span onClick={() => selectPageHandler(page + 1)} style={{ padding: "15px 20px", border: "1px solid", cursor: "pointer" }}>NEXT</span>
         </div>
-      )} 
+        {filteredData.length > 0 && (
+          <div className="pagination">
+            <span onClick={() => selectPageHandler(page - 1)} className="pagination-btn">PREV</span>
+            {
+              [...Array(Math.ceil(filteredData.length / 3))].map((_, i) => {
+                return (
+                  <span
+                    className={page === i + 1 ? "pagination-btn active" : "pagination-btn"}
+                    onClick={() => selectPageHandler(i + 1)}
+                    key={i}
+                  >
+                    {i + 1}
+                  </span>
+                );
+              })
+            }
+            <span onClick={() => selectPageHandler(page + 1)} className="pagination-btn">NEXT</span>
+          </div>
+        )}
       </div>
     </div>
   );

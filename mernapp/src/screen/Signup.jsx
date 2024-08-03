@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
 import { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 export default function Signup() {
     const [credentials, setcredentials] = useState({name:"",email:"",password:"",location:""})
-    // let navigate = useNavigate()
+     let navigate = useNavigate()
     const handleSubmit = async (event)=>{
         event.preventDefault();
         const response = await fetch("https://pu-resources-backend.onrender.com/api/createuser",{
@@ -15,13 +15,14 @@ export default function Signup() {
             body: JSON.stringify({name:credentials.name,email:credentials.email,password: credentials.password, location:credentials.location})
         })
         const json = await response.json()
-        console.log(json)
+        // console.log(json)
         if(!json.success){
             alert("Enter valid credentials")
         }
         if(json.success){
-          // navigate("/home")
-          alert("Signup Successful, please login")
+           navigate("/home")
+           alert("Signup Successful")
+          
       }
     }
 
@@ -40,7 +41,7 @@ export default function Signup() {
   <div className="form-group">
     <label htmlFor="exampleInputEmail1">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={credentials.email} placeholder="Enter email" onChange={onChange}/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else like facebook.</small>
+ 
   </div>
   <div className="form-group">
     <label htmlFor="exampleInputPassword1">Password</label>

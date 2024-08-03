@@ -32,38 +32,40 @@ export default function Home() {
           <div className="container mt-5">
             <div className="row justify-content-center">
               <div className="col-md-6 col-lg-4 mb-4">
-                <div className="card p-2 bg-dark border">
-                  <div className="card-body">
+                <div className="card1 p-2 bg-dark border">
+                  <div className="card-body1">
                     <h5 className="card-title">BTECH</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
-                    <Link to="/btech" className="card-link">Card link</Link>
+                    <Link to="/btech" style={{color:"#e31a1a",textDecoration:"underline"}} className="card-link">Click here</Link><span>:-</span>
                   </div>
                 </div>
               </div>
               <div className="col-md-6 col-lg-4 mb-4">
-                <div className="card p-2 bg-dark border">
-                  <div className="card-body">
+                <div className="card1 p-2 bg-dark border">
+                  <div className="card-body1">
                     <h5 className="card-title">BBA</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
-                    <Link to="/bba" className="card-link">Card link</Link>
+                   <p style={{color:"#e31a1a"}}>Coming soon...</p>
                   </div>
                 </div>
               </div>
               <div className="col-md-6 col-lg-4 mb-4">
-                <div className="card p-2 bg-dark border">
-                  <div className="card-body">
+                <div className="card1 p-2 bg-dark border">
+                  <div className="card-body1">
                     <h5 className="card-title">BCA</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
-                    <Link to="/bca" className="card-link">Card link</Link>
+                    <p  style={{color:"#e31a1a"}}>Coming soon...</p>
+                 
                   </div>
                 </div>
               </div>
               <div className="col-md-6 col-lg-4 mb-4">
-                <div className="card p-2 bg-dark border">
-                  <div className="card-body">
+                <div className="card1 p-2 bg-dark border">
+                  <div className="card-body1">
                     <h5 className="card-title">B.COM</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
-                    <Link to="/bcom" className="card-link">Card link</Link>
+                   <p style={{color:"#e31a1a"}}>Coming soon...</p>
+                    
                   </div>
                 </div>
               </div>
