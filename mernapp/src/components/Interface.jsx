@@ -29,7 +29,7 @@ export default function Interface() {
 
 
         <ul className="ul1">
-            <a href="https://www.instagram.com/harsh._.naruka/" target="_blank" rel="noreferrer" style={{textDecoration:"none"}}><li className="li1 instagram"><i className="fa-brands fa-instagram icon1 icon"></i></li></a>
+            <a href="https://www.instagram.com/harshit_nagar17?igsh=YjRhZmFvenFkaGRo" target="_blank" rel="noreferrer" style={{textDecoration:"none"}}><li className="li1 instagram"><i className="fa-brands fa-instagram icon1 icon"></i></li></a>
             <li className="li1 twitter"><i className="fa-brands fa-twitter icon2 icon"></i></li>
             <li className="li1 youtube"><i className="fa-brands fa-youtube icon3 icon"></i></li>
             <li className="li1 facebook"><i className="fa-brands fa-facebook icon4 icon"></i></li>
