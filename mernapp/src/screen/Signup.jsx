@@ -20,7 +20,7 @@ export default function Signup() {
             alert("Enter valid credentials")
         }
         if(json.success){
-           navigate("/home")
+           navigate("/")
            alert("Signup Successful")
           
       }
