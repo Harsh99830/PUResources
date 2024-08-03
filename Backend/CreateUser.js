@@ -9,7 +9,7 @@ const jwtSecret = process.env.JWT_SECRET;
 
 router.post("/createuser",[
     body('email', 'Enter the valid Email Id').isEmail(),
-    body('name').isLength({min:5}),
+    body('name').isLength({min:2}),
     body('password', 'Enter the valid password').isLength({min:6}),
 
 ]
@@ -28,7 +28,6 @@ router.post("/createuser",[
             name: req.body.name,
             password: securePassword,
             email:req.body.email,
-            location:req.body.location,
         })
         res.json({success:true})
     } catch (error) {
