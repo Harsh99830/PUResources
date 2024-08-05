@@ -274,3 +274,15 @@ li{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.password-container {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
