@@ -26,7 +26,7 @@ export default function Btech() {
           <div className="col-12 col-md-6 col-lg-4 mb-4">
             <div className="card1 p-2 bg-dark borderc disabled">
               <div className="card-body1">
-                <h5 className="card-title">1st Year</h5>
+                <h5 className="card-title" >1st Year</h5>
                 <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
                 <Link to="/Btech1stYear" className="card-link">Card link</Link>
               </div>

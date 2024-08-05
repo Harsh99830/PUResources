@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 export default function Interface() {
   return (
-
-
+<>
     
     <div className="main-container">
-      <div className="container1" style={{textShadow:"5px 1px black"}}>
+      <div className="container1 text-light">
         Get your all Notes <br /> & <br /> Previous Questions Paper Here
       </div>
       <div className="container2">
@@ -38,5 +37,6 @@ export default function Interface() {
 
 
     </div>
+    </>
   );
 }

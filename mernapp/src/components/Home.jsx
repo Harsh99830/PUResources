@@ -34,7 +34,7 @@ export default function Home() {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className="card1 p-2 bg-dark border">
                   <div className="card-body1">
-                    <h5 className="card-title">BTECH</h5>
+                    <h5 className="card-title text-light ">BTECH</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
                     <Link to="/btech" style={{color:"#e31a1a",textDecoration:"underline"}} className="card-link">Click here</Link><span>:-</span>
                   </div>
@@ -43,7 +43,7 @@ export default function Home() {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className="card1 p-2 bg-dark border">
                   <div className="card-body1">
-                    <h5 className="card-title">BBA</h5>
+                    <h5 className="card-title text-light ">BBA</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
                    <p style={{color:"#e31a1a"}}>Coming soon...</p>
                   </div>
@@ -52,7 +52,7 @@ export default function Home() {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className="card1 p-2 bg-dark border">
                   <div className="card-body1">
-                    <h5 className="card-title">BCA</h5>
+                    <h5 className="card-title text-light ">BCA</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
                     <p  style={{color:"#e31a1a"}}>Coming soon...</p>
                  
@@ -62,7 +62,7 @@ export default function Home() {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className="card1 p-2 bg-dark border">
                   <div className="card-body1">
-                    <h5 className="card-title">B.COM</h5>
+                    <h5 className="card-title text-light">B.COM</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Notes & previous Questions Papers</h6>
                    <p style={{color:"#e31a1a"}}>Coming soon...</p>
                     

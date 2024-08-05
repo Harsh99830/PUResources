@@ -260,4 +260,17 @@ li{
               0px 0px 7px #0679e6;
 }
 
+.main-container{
+  height: 100vh;
+  background-image: url("./images/admission_block.jpg");
+  background-size: 100% cover;
+  background-position: center;
+}
 
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
