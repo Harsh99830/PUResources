@@ -286,3 +286,14 @@ li{
   transform: translateY(-50%);
   cursor: pointer;
 }
+
+.loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the spinner is above other elements */
+}
